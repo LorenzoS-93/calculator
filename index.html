@@ -4,34 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <title>Document</title>
 </head>
 <body>
     <div class="calculator">
         <div class="display">
-            <div class="text">1234567890</div>
+            <div class="text">0</div>
         </div>
         <div class="buttons">
-            <button class="reset">C</button>
+            <button onclick="reset()" class="reset">C</button>
             <button class="operator">()</button>
             <button class="operator">%</button>
-            <button class="operator">÷</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="operator">x</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="operator">-</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="operator">+</button>
-            <button>+/-</button>
-            <button>0</button>
-            <button>,</button>
-            <button class="equal">=</button>
+            <button onclick="populateDisplay('/')" class="operator">÷</button>
+            <button onclick="populateDisplay('7')">7</button>
+            <button onclick="populateDisplay('8')">8</button>
+            <button onclick="populateDisplay('9')">9</button>
+            <button onclick="populateDisplay('*')" class="operator">x</button>
+            <button onclick="populateDisplay('4')">4</button>
+            <button onclick="populateDisplay('5')">5</button>
+            <button onclick="populateDisplay('6')">6</button>
+            <button onclick="populateDisplay('-')" class="operator">-</button>
+            <button onclick="populateDisplay('1')">1</button>
+            <button onclick="populateDisplay('2')">2</button>
+            <button onclick="populateDisplay('3')">3</button>
+            <button onclick="populateDisplay('+')" class="operator">+</button>
+            <button >+/-</button>
+            <button onclick="populateDisplay('0')">0</button>
+            <button onclick="populateDisplay('.')">,</button>
+            <button onclick= "equal()" class="equal">=</button>
         </div>
     </div>
 </body>
