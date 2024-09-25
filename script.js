@@ -12,8 +12,7 @@ function multiply(a, b) {
 
 function divide(a, b) {
     if (b === 0) return "NaN";
-    else if(a%b === 0) return a/b;
-    else return (a/b).toFixed(6);
+    else return a/b;
 }
 
 function operate(operator, a , b) {
@@ -34,7 +33,8 @@ function operate(operator, a , b) {
             a = "ERROR";
             break;
     }
-    return a;
+    if (Number.isInteger(a)) return a;
+    else return a.toFixed(6);
 }
 
 const display = document.querySelector(".text");
@@ -67,13 +67,9 @@ function reset() {
 }
 
 function equal() {
-    if(currentOperator !== "" && currentOperation.split(currentOperator).length === 1)
-        display.textContent = "ERROR";
-    else {
-        display.textContent = currentOperation
-                                        .split(currentOperator)
-                                        .reduce((total, item) => operate(currentOperator, Number(total), Number(item)));
-        currentOperation = display.textContent;
-    }
-    
+    display.textContent = currentOperation
+                                    .split(currentOperator)
+                                    .reduce((total, item) => operate(currentOperator, Number(total), Number(item)));
+    currentOperation = display.textContent;
+    currentOperator = "";
 }
